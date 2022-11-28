@@ -1,2 +1,5 @@
-package com.hyuk.core.member;public enum Grade {
+package com.hyuk.core.member;
+public enum Grade {
+    BASIC,
+    VIP
 }

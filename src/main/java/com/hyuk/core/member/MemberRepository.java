@@ -1,2 +1,6 @@
-package com.hyuk.core.member;public interface MemberRepository {
+package com.hyuk.core.member;
+public interface MemberRepository {
+    void save(Member member);
+
+    Member findById(Long memberId);
 }
