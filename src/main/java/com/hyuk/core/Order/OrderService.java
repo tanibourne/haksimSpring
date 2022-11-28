@@ -1,2 +1,5 @@
-package com.hyuk.core.Order;public interface OrderService {
+package com.hyuk.core.Order;
+public interface OrderService {
+
+    Order createOrder(Long memberId, String itemName, int itemPrice);
 }
