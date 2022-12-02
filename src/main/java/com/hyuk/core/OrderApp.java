@@ -2,18 +2,22 @@ package com.hyuk.core;
 
 import com.hyuk.core.Order.Order;
 import com.hyuk.core.Order.OrderService;
-import com.hyuk.core.Order.OrderServiceImpl;
 import com.hyuk.core.member.Grade;
 import com.hyuk.core.member.Member;
 import com.hyuk.core.member.MemberService;
-import com.hyuk.core.member.MemberServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
     public static void main(String[] args) {
 
-        AppConfig appConfig = new AppConfig();
-        MemberService memberService = appConfig.memberService();
-        OrderService orderService = appConfig.orderService();
+//        AppConfig appConfig = new AppConfig();
+//        MemberService memberService = appConfig.memberService();
+//        OrderService orderService = appConfig.orderService();
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
         long memberId =1L;
 
